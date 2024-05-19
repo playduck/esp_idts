@@ -6,7 +6,6 @@
 
 #include "esp_idts.h"
 
-#pragma once
 /*
 * Supported sensor ranges and their error
 * See: https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peripherals/temp_sensor.html
