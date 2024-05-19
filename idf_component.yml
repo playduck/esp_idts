@@ -3,6 +3,7 @@ dependencies:
     version: '>=5.0'
 description: ESP Internal Dynamic Temperature Sensor
 repository: git://github.com/playduck/esp-idts.git
+git: "https://github.com/playduck/esp_idts.git"
 targets:
 - esp32s2
 - esp32s3

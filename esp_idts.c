@@ -6,6 +6,23 @@
 
 #include "esp_idts.h"
 
+#pragma once
+/*
+* Supported sensor ranges and their error
+* See: https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peripherals/temp_sensor.html
+*/
+const sens_range_t sens_range_table[] = {
+    {.lower_bound = 50, .upper_bound = 125, .error = 3},    /* 0 */
+    {.lower_bound = 20, .upper_bound = 100, .error = 2},    /* 1 */
+    {.lower_bound = -10, .upper_bound = 80, .error = 1},    /* 2 */
+    {.lower_bound = -30, .upper_bound = 50, .error = 2},    /* 3 */
+    {.lower_bound = -40, .upper_bound = 20, .error = 3},    /* 4 */
+    {.lower_bound = 0, .upper_bound = 0, .error = INT8_MAX} /* out of range */
+};
+
+float delta_c = 2.0F;
+uint8_t cooldown = 2;
+
 static const char *TAG = "IDTS";
 
 static bool configured = false;
