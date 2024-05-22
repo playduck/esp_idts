@@ -105,7 +105,7 @@ void read_temp_sensor(float *tsens_value, int8_t *error)
     *error = sens_range_table[current_range].error;
 
     ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, tsens_value));
-    ESP_LOGI(TAG, "Temp %.02f ℃  (range %i, error <%i℃ )", *tsens_value, current_range, *error);
+    ESP_LOGD(TAG, "Temp %.02f ℃  (range %i, error <%i℃ )", *tsens_value, current_range, *error);
 
     // get recommended range based on current measurement
     uint8_t proposed_range = select_best_range(*tsens_value);
